@@ -7,21 +7,5 @@
 </nav>
 
 <main>
-  <section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Welcome to WalkThru+</h1>
-        <% if logged_in? %>
-            <p class="lead text-muted">You are Logged In, <%= current_user.username %></p>
-        <% else %>
-            <p class="lead text-muted">Please Login or Signup below!</p>
-        <%end%>
-        <p class="lead text-muted"></p>
-        <p>
-          <%= button_to "Login", '/login', method: :get, class: 'btn btn-primary my-2'%>
-          <%= button_to "Sign Up", '/users/new', method: :get, class: 'btn btn-secondary my-2'%>
-        </p>
-        </div>
-      </div>
-    </section>
-  </main>
+  <%= render 'login' %>
+</main>
