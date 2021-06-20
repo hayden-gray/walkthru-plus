@@ -1,8 +1,27 @@
-<h1>Welcome</h1>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
 
-<% if logged_in? %>
-    <h1>You are Logged In, <%= current_user.username %></h1>
-<%end%>
-
-<%= button_to "Login", '/login', method: :get%>
-<%= button_to "Sign Up", '/users/new', method: :get%>
+<main>
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Welcome to WalkThru+</h1>
+        <% if logged_in? %>
+            <p class="lead text-muted">You are Logged In, <%= current_user.username %></p>
+        <% else %>
+            <p class="lead text-muted">Please Login or Signup below!</p>
+        <%end%>
+        <p class="lead text-muted"></p>
+        <p>
+          <%= button_to "Login", '/login', method: :get, class: 'btn btn-primary my-2'%>
+          <%= button_to "Sign Up", '/users/new', method: :get, class: 'btn btn-secondary my-2'%>
+        </p>
+        </div>
+      </div>
+    </section>
+  </main>
