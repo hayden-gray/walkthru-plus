@@ -1,8 +1,18 @@
-<h1>Sign Up</h1>
-<%= form_for @user do |f|%>
-  <%= f.label :username%><br>
-  <%= f.text_field :username%><br>
-  <%= f.label :password%><br>
-  <%= f.password_field :password%><br>
-  <%= f.submit %>
+<section class="py-5 text-center container">
+  <%= form_for @user do |f|%>
+  <div class="card bg-light border-dark mb-3">
+    <h4 class="card-header">Sign Up</h4>
+    <div class="card-body">
+      <p class="card-text">
+        Username:
+        <%= f.text_field :username%><br>
+      </p>
+      <p class="card-text">
+        Password:
+        <%= f.password_field :password%><br>
+      </p>
+      <%= f.submit "Create", class: 'btn btn-primary'%>
+    </div>
+  </div>
+</section>
 <%end%>

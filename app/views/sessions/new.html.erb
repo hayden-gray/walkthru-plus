@@ -1,8 +1,18 @@
-<h1>Login</h1>
-   <%= form_tag '/login' do %>
-   <%= label_tag :username%>
-   <%= text_field_tag :username %>
-   <%= label_tag :password%>
-   <%= password_field_tag :password%>
-   <%= submit_tag "Login"%>
+<section class="py-5 text-center container">
+  <%= form_tag '/login' do %>
+  <div class="card bg-light border-dark mb-3">
+    <h4 class="card-header">Login</h4>
+    <div class="card-body">
+      <p class="card-text">
+        Username:
+        <%= text_field_tag :username %>
+      </p>
+      <p class="card-text">
+        Password:
+        <%= password_field_tag :password%>
+      </p>
+      <%= submit_tag "Login", class: 'btn btn-primary'%>
+    </div>
+  </div>
+</section>
 <%end%>
